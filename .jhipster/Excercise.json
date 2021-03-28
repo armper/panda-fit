@@ -1,0 +1,47 @@
+{
+  "name": "Excercise",
+  "fields": [
+    {
+      "fieldName": "type",
+      "fieldType": "ExcerciseType",
+      "fieldValues": "BARBELL,BAR,MACHINE"
+    },
+    {
+      "fieldName": "currentVolume",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "startingVolume",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "goalVolume",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "cycle",
+      "otherEntityRelationshipName": "excercise",
+      "relationshipName": "cycle"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "routine",
+      "otherEntityRelationshipName": "excercise",
+      "relationshipName": "routine"
+    }
+  ],
+  "entityTableName": "excercise",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "databaseType": "mongodb",
+  "changelogDate": "20210328143545"
+}
