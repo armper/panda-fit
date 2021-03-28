@@ -1,49 +1,37 @@
 entity Routine {
-name String
+  name String
 dateStarted LocalDate
 dateEnded LocalDate
 goalDate LocalDate
 
-startingBodyWeight Number
-endingBodyWeight Number
+startingBodyWeight Integer
+endingBodyWeight Integer
 }
-
 entity ApplicationUser {
-  ranking Number
+  ranking Integer
 }
-
 relationship OneToOne {
   ApplicationUser{internalUser} to User
 }
-
 relationship ManyToMany {
   ApplicationUser{routine} to Routine{user}
 }
-
 entity Excercise {
-type ExcerciseType
-currentVolume Number
-startingVolume Number
-goalVolume Number
+  type ExcerciseType
+currentVolume Integer
+startingVolume Integer
+goalVolume Integer
 }
-
 enum ExcerciseType {
-  BARBELL,
-  BAR,
+  BARBELL
+  BAR
   MACHINE
 }
-
+entity Cycle {
+  reps Integer
+volume Integer
+}
 relationship OneToMany {
   Routine to Excercise
+    Excercise to Cycle
 }
-
-
-entity Cycle {
-reps Number
-volume Number
-}
-
-relationship OneToMany {
-  Excercise to Cycle
-}
-
