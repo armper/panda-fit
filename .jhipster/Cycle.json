@@ -1,0 +1,32 @@
+{
+  "name": "Cycle",
+  "fields": [
+    {
+      "fieldName": "reps",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "volume",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "excercise",
+      "otherEntityRelationshipName": "cycle",
+      "relationshipName": "excercise"
+    }
+  ],
+  "entityTableName": "cycle",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "databaseType": "mongodb",
+  "changelogDate": "20210328143546"
+}

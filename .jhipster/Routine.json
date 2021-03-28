@@ -1,0 +1,55 @@
+{
+  "name": "Routine",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateStarted",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "dateEnded",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "goalDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "startingBodyWeight",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "endingBodyWeight",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "excercise",
+      "otherEntityRelationshipName": "routine",
+      "relationshipName": "excercise"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "applicationUser",
+      "otherEntityRelationshipName": "routine",
+      "relationshipName": "user",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "routine",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "databaseType": "mongodb",
+  "changelogDate": "20210328143543"
+}

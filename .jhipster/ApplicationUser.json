@@ -1,0 +1,36 @@
+{
+  "name": "ApplicationUser",
+  "fields": [
+    {
+      "fieldName": "ranking",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "applicationUser",
+      "relationshipName": "internalUser",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "routine",
+      "otherEntityRelationshipName": "user",
+      "relationshipName": "routine",
+      "ownerSide": true
+    }
+  ],
+  "entityTableName": "application_user",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "databaseType": "mongodb",
+  "changelogDate": "20210328143544"
+}
